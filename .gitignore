@@ -5,3 +5,5 @@
 /lib/*.jar
 *.class
 hs_err_pid*.log
+
+hs_err_pid*.log
