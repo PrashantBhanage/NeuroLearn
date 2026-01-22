@@ -1,0 +1,7 @@
+/bin/
+/out/
+/.idea/
+/.vscode/
+/lib/*.jar
+*.class
+hs_err_pid*.log
