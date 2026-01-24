@@ -15,7 +15,7 @@ fetch(`/api/lessons?subjectId=${subjectId}`)
         <p>${l.lesson_text.substring(0, 120)}...</p>
         <a class="lesson-btn"
            href="/lesson/lessonView.html?lessonId=${l.lesson_id}">
-           Start Lesson →
+           Start Lesson 🎮
         </a>
       `;
 

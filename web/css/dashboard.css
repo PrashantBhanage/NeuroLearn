@@ -117,3 +117,53 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =====================================
+   ✅ Soft Kid-Friendly Touch (Minimal)
+   Keeps dashboard clean, just playful
+===================================== */
+
+/* Use same friendly font as quiz */
+body {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+}
+
+/* Small sparkle background (very light) */
+body::before {
+  content: "✨";
+  position: fixed;
+  top: 12%;
+  left: 8%;
+  font-size: 2.2rem;
+  opacity: 0.15;
+}
+
+body::after {
+  content: "⭐";
+  position: fixed;
+  bottom: 15%;
+  right: 10%;
+  font-size: 2rem;
+  opacity: 0.12;
+}
+
+/* Title slightly more fun */
+.header h1 {
+  text-shadow: 2px 2px 0px #FFE066;
+}
+
+/* Card hover becomes kid-friendly (outline only) */
+.subject-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  outline: 4px solid #FFD700;
+}
+
+/* Icon wrapper little pop */
+.icon-wrapper {
+  transition: 0.3s ease;
+}
+
+.subject-card:hover .icon-wrapper {
+  transform: rotate(3deg) scale(1.05);
+}

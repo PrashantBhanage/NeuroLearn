@@ -1,29 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #e4e8ec);
-  padding: 40px;
+  font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #FFE5B4 0%,
+    #FFB6C1 25%,
+    #FFD700 50%,
+    #87CEEB 75%,
+    #DDA0DD 100%
+  );
+  background-size: 400% 400%;
+  animation: rainbowBackground 15s ease infinite;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
+@keyframes rainbowBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* MAIN CARD */
 .container {
-  max-width: 700px;
-  margin: auto;
+  max-width: 850px;
+  width: 100%;
   background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  padding: 50px;
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 6px #FFD700,
+    0 0 0 10px #FF69B4,
+    0 0 0 14px #87CEEB;
+
+  position: relative;
+  animation: fadeInUp 0.6s ease-out;
 }
 
+/* Cute icon bubble */
+.container::before {
+  content: "📖";
+  position: absolute;
+  top: -35px;
+  left: 30px;
+  font-size: 3rem;
+  background: white;
+  padding: 15px;
+  border-radius: 50%;
+  border: 5px solid #FFD700;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TITLE */
 h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #4A4A4A;
   margin-bottom: 20px;
+  text-shadow: 3px 3px 0px #FFD700;
 }
 
+/* LESSON TEXT */
+p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* BUTTON */
 button {
-  margin-top: 30px;
-  padding: 12px 20px;
+  margin-top: 35px;
+  padding: 16px 35px;
   border: none;
-  background: #3182ce;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #FF69B4, #FF1493);
   color: white;
-  font-size: 1rem;
-  border-radius: 8px;
+
+  font-size: 1.3rem;
+  font-weight: 700;
   cursor: pointer;
+
+  border: 4px solid #FFD700;
+
+  box-shadow:
+    0 10px 25px rgba(255, 20, 147, 0.4),
+    0 0 0 4px #FFB6C1;
+
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+button:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow:
+    0 14px 35px rgba(255, 20, 147, 0.6),
+    0 0 0 6px #FFD700;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  button {
+    width: 100%;
+  }
 }

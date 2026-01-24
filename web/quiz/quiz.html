@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="../css/quiz.css">
+  <meta charset="UTF-8" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="../css/quiz.css" />
 </head>
 <body>
 
-<div class="quiz-container">
-    <h1 id="quizTitle">Quiz</h1>
-    <p id="lessonInfo">Loading quiz...</p>
+<div class="quiz-wrapper">
+
+  <!-- ✅ Quiz Main Card -->
+  <div class="quiz-card" id="quizBox">
+    <div class="question-box">
+      <div class="question-number" id="questionNumber"></div>
+      <h2 id="questionText">Loading...</h2>
+    </div>
+
+    <div class="options-box" id="optionsBox">
+      <!-- options injected here -->
+    </div>
+  </div>
+
+  <!-- ✅ Next Button -->
+  <button id="nextBtn" disabled>
+    <span>Next Question 🎮</span>
+  </button>
+
+  <!-- ✅ Quiz Completed Screen -->
+  <div id="quizEndScreen" style="display:none; text-align:center;">
+
+    <h2 style="font-size:2.5rem; margin-top:30px;">
+      🎉 Quiz Completed!
+    </h2>
+
+    <button id="goDashboardBtn">
+      🏠 Go to Dashboard
+    </button>
+
+    <button id="retryQuizBtn">
+      🔁 Retry Quiz
+    </button>
+
+  </div>
+
 </div>
 
 <script src="../js/quiz.js"></script>
