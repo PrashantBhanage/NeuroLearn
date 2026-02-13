@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +5,8 @@
 }
 
 body {
-  font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(
-    135deg,
-    #FFE5B4 0%,
-    #FFB6C1 25%,
-    #FFD700 50%,
-    #87CEEB 75%,
-    #DDA0DD 100%
-  );
-  background-size: 400% 400%;
-  animation: rainbowBackground 15s ease infinite;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fdf6ff, #e8f7ff);
   min-height: 100vh;
   padding: 60px 20px;
   display: flex;
@@ -25,123 +14,136 @@ body {
   align-items: flex-start;
 }
 
-@keyframes rainbowBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Floating soft gradients */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: floaty 9s ease-in-out infinite;
 }
 
-/* MAIN CARD */
+body::before {
+  background: #ffd6e8;
+  top: 10%;
+  left: 10%;
+}
+
+body::after {
+  background: #bfe8ff;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
+
+/* Lesson Card */
 .container {
-  max-width: 850px;
+  max-width: 900px;
   width: 100%;
-  background: white;
-  padding: 50px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+
+  padding: 55px;
   border-radius: 30px;
 
   box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25),
-    0 0 0 6px #FFD700,
-    0 0 0 10px #FF69B4,
-    0 0 0 14px #87CEEB;
+    0 20px 45px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
 
-  position: relative;
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeUp 0.45s ease;
 }
 
-/* Cute icon bubble */
-.container::before {
-  content: "📖";
-  position: absolute;
-  top: -35px;
-  left: 30px;
-  font-size: 3rem;
-  background: white;
-  padding: 15px;
-  border-radius: 50%;
-  border: 5px solid #FFD700;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* TITLE */
-h1 {
-  font-size: 3rem;
+/* Title */
+#lessonTitle {
+  font-size: 2.6rem;
   font-weight: 700;
-  color: #4A4A4A;
+  color: #333;
   margin-bottom: 20px;
-  text-shadow: 3px 3px 0px #FFD700;
+  line-height: 1.3;
 }
 
-/* LESSON TEXT */
-p {
-  font-size: 1.3rem;
-  line-height: 1.8;
+/* Decorative divider */
+#lessonTitle::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  margin-top: 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ffb6d9, #6ecbff);
+}
+
+/* Lesson text */
+#lessonText {
+  font-size: 1.22rem;
+  line-height: 1.9;
   color: #555;
-  margin-top: 10px;
+  margin-top: 22px;
+
+  letter-spacing: 0.2px;
 }
 
-/* BUTTON */
+/* CTA Section */
 button {
-  margin-top: 35px;
-  padding: 16px 35px;
+  margin-top: 40px;
+  padding: 16px 32px;
   border: none;
   border-radius: 20px;
 
-  background: linear-gradient(135deg, #FF69B4, #FF1493);
+  background: linear-gradient(135deg, #6ecbff, #8f7bff);
   color: white;
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  letter-spacing: 0.3px;
+
   cursor: pointer;
 
-  border: 4px solid #FFD700;
-
-  box-shadow:
-    0 10px 25px rgba(255, 20, 147, 0.4),
-    0 0 0 4px #FFB6C1;
-
-  transition: 0.3s ease;
+  box-shadow: 0 10px 20px rgba(111, 181, 255, 0.35);
+  transition: 0.25s ease;
 }
 
-/* Hover Effect */
 button:hover {
-  transform: scale(1.08) rotate(1deg);
-  box-shadow:
-    0 14px 35px rgba(255, 20, 147, 0.6),
-    0 0 0 6px #FFD700;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(111, 181, 255, 0.45);
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
 }
 
-/* RESPONSIVE */
+/* Reading width optimization */
+@media (min-width: 1100px) {
+  #lessonText {
+    max-width: 80ch;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 30px;
+    padding: 35px;
   }
 
-  h1 {
-    font-size: 2.2rem;
+  #lessonTitle {
+    font-size: 2rem;
   }
 
-  p {
-    font-size: 1.1rem;
-  }
-
-  button {
-    width: 100%;
+  #lessonText {
+    font-size: 1.05rem;
   }
 }
