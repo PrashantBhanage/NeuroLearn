@@ -1,155 +1,130 @@
-NeuroLearn – Learning Platform with Lessons and Quizzes
-Project Overview
+# NeuroLearn
 
-NeuroLearn is a web-based learning platform designed to help primary-level students understand basic subjects through short lessons and interactive quizzes.
+NeuroLearn is a Java-based learning platform designed to deliver structured lessons, quizzes, and subject-wise content through a clean web interface. The system combines a Java backend with a responsive frontend to support interactive learning and performance tracking.
 
-The system focuses on:
+## Purpose
 
-Simple explanations
+The project was built as a final-year BCA academic project to demonstrate:
 
-One concept at a time
+* MVC-based Java web application architecture
+* DAO pattern implementation
+* Database integration
+* Interactive UI with lessons and quizzes
+* Real-world deployment-ready project structure
 
-Immediate feedback through quizzes
+## Core Features
 
-The project is implemented using Java HTTP Server for backend APIs and HTML, CSS, and JavaScript for the frontend.
+### Learning Module
 
-Target Audience
+* Subject-wise lesson navigation
+* Structured lesson content display
+* Single lesson view with navigation
 
-This project is intended for:
+### Quiz System
 
-Children at a beginner learning level
+* Subject-based quizzes
+* Question rendering from database
+* Score evaluation logic
 
-Parents or teachers assisting early education
+### Dashboard
 
-Students learning full-stack development using core technologies
+* Central learning overview
+* Navigation across subjects and modules
 
-Learning Flow
+### Dark Mode
 
-The user starts at the dashboard and selects a subject.
+* Toggle-based UI theme
+* Dedicated CSS + JS implementation
 
-Each subject contains multiple lessons.
+### Backend Architecture
 
-Each lesson explains a single concept in simple language.
+* Java Controllers (MVC pattern)
+* DAO layer for database operations
+* Model classes for domain entities
+* Utility classes for DB connection and static file handling
 
-After the lesson, the user attempts a quiz.
+## Tech Stack
 
-The quiz shows one question at a time.
+**Backend**
 
-Immediate feedback is provided:
+* Java
+* Servlet-based architecture
+* DAO pattern
 
-Correct answer is highlighted
+**Frontend**
 
-Incorrect answer is marked
+* HTML
+* CSS
+* JavaScript
 
-The user proceeds to the next question.
+**Database**
 
-This approach helps learners understand concepts step by step.
+* Relational DB (via JDBC)
 
-Subjects Included
+## Project Structure
 
-Maths
+```
+NeuroLearn/
+│
+├── src/
+│   ├── controller/
+│   ├── dao/
+│   ├── model/
+│   ├── util/
+│   └── MainServer.java
+│
+├── web/
+│   ├── css/
+│   ├── js/
+│   ├── lesson/
+│   ├── quiz/
+│   ├── subjects/
+│   └── index.html
+│
+└── README.md
+```
 
-Science
+## How to Run
 
-English
+1. Clone repository
 
-Art
+```
+git clone https://github.com/PrashantBhanage/NeuroLearn.git
+```
 
-Reading
+2. Open project in IDE (IntelliJ / Eclipse)
 
-Geography
+3. Configure:
 
-Each subject contains multiple lessons and quizzes.
+* Database connection in `DBConnection.java`
+* Server (Tomcat/Jetty)
 
-Quiz Design
+4. Run MainServer
 
-One question is displayed at a time
+5. Open in browser:
 
-Options are shown clearly
+```
+http://localhost:8080
+```
 
-The user must answer before moving forward
+## Key Learning Outcomes
 
-Feedback is instant
+* Implemented MVC architecture in a real project
+* Designed DAO-based data access
+* Built quiz and lesson delivery modules
+* Practiced Git workflow and version control
+* Developed responsive UI with theme support
 
-This design avoids confusion and encourages understanding.
+## Future Improvements
 
-Technology Stack
-Frontend
+* User authentication system
+* Progress tracking
+* Admin panel
+* Performance analytics
+* Deployment on cloud (AWS / Render)
 
-HTML
+## Author
 
-CSS
-
-JavaScript (Vanilla)
-
-Backend
-
-Java
-
-HttpServer (com.sun.net.httpserver)
-
-Database
-
-MySQL
-
-Database Structure
-
-The database contains:
-
-Subjects
-
-Lessons
-
-Quiz questions
-
-Admin (for future use)
-
-Each quiz question stores:
-
-Question text
-
-Four options
-
-Correct answer
-
-Project Environment
-Requirements
-
-Java JDK 8 or above
-
-MySQL Server
-
-Any Java IDE
-
-Modern web browser
-
-How to Run the Project
-
-Import or clone the project.
-
-Create a MySQL database named neurolearn.
-
-Execute the provided SQL script to create tables and insert data.
-
-Update database credentials in the Java database utility file.
-
-Run MainServer.java.
-
-Open the browser and go to:
-
-http://localhost:8015
-
-Application Structure
-
-/web – frontend files
-
-/controller – Java API controllers
-
-/dao – database access logic
-
-/model – data models
-
-Conclusion
-
-NeuroLearn is a simple educational platform that combines lessons and quizzes to support basic learning.
-The project demonstrates how a frontend and backend can work together using core technologies without external frameworks.
+**Prashant Bhanage**
+Final Year BCA Student
+GitHub: https://github.com/PrashantBhanage
