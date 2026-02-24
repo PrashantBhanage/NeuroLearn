@@ -4,7 +4,7 @@
   const lessonId = params.get("lessonId") || params.get("lessonid");
   
   if (!lessonId) {
-    document.getElementById("questionText").textContent =
+    document.getElementById("questionText").innerHTML =
       "Error: No lesson ID provided.";
     return;
   }
@@ -26,7 +26,7 @@
     .then(data => {
   
       if (!Array.isArray(data) || data.length === 0) {
-        questionText.textContent = "No questions available.";
+        questionText.innerHTML = "No questions available.";
         return;
       }
   
@@ -34,7 +34,7 @@
       renderQuestion();
     })
     .catch(err => {
-      questionText.textContent = "Error loading quiz.";
+      questionText.innerHTML = "Error loading quiz.";
       console.error(err);
     });
   
@@ -53,7 +53,8 @@
   
     questionNumber.textContent =
       `🎯 Question ${currentIndex + 1} of ${questions.length}`;
-  
+
+    // Set question text only (no button - button is already in HTML)
     questionText.textContent = q.question;
   
     const options = {
@@ -62,14 +63,16 @@
       C: q.c,
       D: q.d
     };
-  
-    Object.entries(options).forEach(([key, value]) => {
+
+    Object.entries(options).forEach(([key, value], index) => {
   
       const div = document.createElement("div");
       div.className = "option";
       div.textContent = value;
-  
-      div.onclick = () => checkAnswer(div, key, q.correct);
+      
+      div.onclick = () => {
+        checkAnswer(div, key, q.correct);
+      };
   
       optionsBox.appendChild(div);
     });
@@ -96,16 +99,15 @@
     } else {
   
       el.classList.add("wrong");
-  
-      // Highlight correct answer
+      
+      // Get the correct answer text
       const q = questions[currentIndex];
+      const correctText = correct === "A" ? q.a : correct === "B" ? q.b : correct === "C" ? q.c : q.d;
+
+      // Highlight correct answer
       all.forEach(o => {
         if (
-          o.textContent ===
-          (correct === "A" ? q.a :
-           correct === "B" ? q.b :
-           correct === "C" ? q.c :
-           q.d)
+          o.textContent === correctText
         ) {
           o.classList.add("correct");
         }
@@ -158,11 +160,11 @@
     nextBtn.style.display = "none";
   
     quizEndScreen.style.display = "block";
-  
+    
     // Dashboard Button
     document.getElementById("goDashboardBtn").onclick = () => {
-    window.location.href = "/";
-  };
+      window.location.href = "/";
+    };
   
   
     // Retry Full Quiz Button

@@ -1,0 +1,180 @@
+/* Universal Dark Mode Styles */
+body.dark-mode {
+  background: #1a1a2e !important;
+}
+
+body.dark-mode .container,
+body.dark-mode .lesson-container,
+body.dark-mode .quiz-wrapper {
+  background: transparent !important;
+}
+
+/* Header text */
+body.dark-mode .header h1,
+body.dark-mode h1,
+body.dark-mode .page-title {
+  color: #eee !important;
+}
+
+body.dark-mode .header p,
+body.dark-mode p {
+  color: #aaa !important;
+}
+
+/* Cards */
+body.dark-mode .subject-card,
+body.dark-mode .lesson-card,
+body.dark-mode .quiz-card {
+  background: #2d3748 !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .subject-card h3,
+body.dark-mode .lesson-card h3 {
+  color: #eee !important;
+}
+
+body.dark-mode .lesson-card p {
+  color: #ccc !important;
+}
+
+/* Icons */
+body.dark-mode .icon-wrapper {
+  background: #4a5568 !important;
+}
+
+/* Form elements */
+body.dark-mode .back-btn,
+body.dark-mode a.back-btn {
+  background: #4a5568 !important;
+  color: #eee !important;
+}
+
+body.dark-mode .video-section {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+body.dark-mode #lessonTitle {
+  color: #eee !important;
+}
+
+body.dark-mode .notes-section {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+body.dark-mode .notes-section h2 {
+  color: #90CDF4 !important;
+}
+
+body.dark-mode #notesContent {
+  color: #ccc !important;
+}
+
+body.dark-mode .quiz-prompt {
+  background: #2d3748 !important;
+  color: #eee !important;
+}
+
+body.dark-mode .done-watching-btn {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+/* QUIZ PAGE - Fix dark mode */
+body.dark-mode .quiz-card {
+  background: #2d3748 !important;
+  color: #eee !important;
+}
+
+body.dark-mode .question-box h2 {
+  color: #fff !important;
+}
+
+body.dark-mode .question-number {
+  color: #aaa !important;
+}
+
+body.dark-mode .option {
+  background: #374151 !important;
+  border: 2px solid #4b5563 !important;
+  color: #eee !important;
+}
+
+body.dark-mode .option:hover {
+  background: #4b5563 !important;
+}
+
+body.dark-mode .option.correct {
+  background: #22c55e !important;
+  border-color: #16a34a !important;
+  color: white !important;
+}
+
+body.dark-mode .option.wrong {
+  background: #ef4444 !important;
+  border-color: #dc2626 !important;
+  color: white !important;
+}
+
+/* Retry Button - Dark Mode */
+body.dark-mode .retry-btn {
+  background: #f97316 !important;
+  color: white !important;
+}
+
+body.dark-mode .retry-btn:hover {
+  background: #ea580c !important;
+}
+
+body.dark-mode #nextBtn {
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+body.dark-mode #quizEndScreen {
+  background: #2d3748 !important;
+  color: #eee !important;
+}
+
+body.dark-mode #goDashboardBtn,
+body.dark-mode #retryQuizBtn {
+  background: #4b5563 !important;
+  color: #eee !important;
+}
+
+/* Voice Button - Dark Mode */
+body.dark-mode .voice-btn {
+  background: #8b5cf6 !important;
+  color: white !important;
+}
+
+body.dark-mode .voice-btn.muted {
+  background: #4b5563 !important;
+}
+
+/* Dark Mode Button */
+.dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 10000;
+  transition: all 0.3s;
+}
+
+.dark-mode-btn:hover {
+  background: #555;
+}
+
+body.dark-mode .dark-mode-btn {
+  background: #eee;
+  color: #333;
+}

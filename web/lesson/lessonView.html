@@ -2,19 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson</title>
 
   <link rel="stylesheet" href="/css/lessonView.css" />
+  <link rel="stylesheet" href="/css/darkmode.css" />
+  <style>
+    .done-watching-btn {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+    .done-watching-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+    }
+  </style>
 </head>
 <body>
+  <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark</button>
 
-  <div class="container">
-    <h1 id="lessonTitle">Loading...</h1>
-    <p id="lessonText"></p>
+  <div class="lesson-container">
+    <div class="lesson-header">
+      <a href="/" class="back-btn">← Back to Dashboard</a>
+      <h1 id="lessonTitle">Loading...</h1>
+    </div>
 
-    <button id="startQuiz">Start Quiz</button>
+    <div class="lesson-content">
+      <div class="video-section">
+        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+      <div class="notes-section">
+        <h2>📝 Lesson Notes</h2>
+        <div id="notesContent"></div>
+      </div>
+    </div>
+
+    <button id="doneWatchingBtn" class="done-watching-btn">✅ I'm Done Watching</button>
+
+    <div class="quiz-prompt" id="quizPrompt" style="display: none;">
+      <h2>🎉 Great job watching the lesson!</h2>
+      <p>Ready to test your knowledge with a quick quiz?</p>
+      <div class="quiz-buttons">
+        <button id="yesQuiz" class="btn-yes">✅ Yes, let's do the quiz!</button>
+        <button id="noQuiz" class="btn-no">❌ No, take me back</button>
+      </div>
+    </div>
   </div>
 
-  <script src="/js/lessonView.js"></script>
+<script src="/js/lessonView.js"></script>
+<script src="/js/darkmode.js"></script>
 </body>
 </html>

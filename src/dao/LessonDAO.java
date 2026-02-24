@@ -27,7 +27,9 @@ public class LessonDAO {
                 rs.getInt("subject_id"),
                 rs.getString("lesson_title"),
                 rs.getString("lesson_text"),
-                rs.getString("lesson_image")
+                rs.getString("lesson_image"),
+                rs.getString("video_url"),
+                rs.getString("notes")
             ));
         }
 
@@ -50,7 +52,9 @@ public class LessonDAO {
                 rs.getInt("subject_id"),
                 rs.getString("lesson_title"),
                 rs.getString("lesson_text"),
-                rs.getString("lesson_image")
+                rs.getString("lesson_image"),
+                rs.getString("video_url"),
+                rs.getString("notes")
             );
         }
 

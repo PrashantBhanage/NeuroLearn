@@ -19,19 +19,32 @@ public class SingleLessonController implements HttpHandler {
 
             String json = "{"
                 + "\"lesson_id\":" + lesson.getLesson_id() + ","
-                + "\"lesson_title\":\"" + lesson.getLesson_title() + "\","
-                + "\"lesson_text\":\"" + lesson.getLesson_text() + "\""
+                + "\"lesson_title\":\"" + escape(lesson.getLesson_title()) + "\","
+                + "\"lesson_text\":\"" + escape(lesson.getLesson_text()) + "\","
+                + "\"video_url\":\"" + escape(lesson.getVideo_url()) + "\","
+                + "\"notes\":\"" + escape(lesson.getNotes()) + "\""
                 + "}";
 
-            exchange.getResponseHeaders().set("Content-Type", "application/json");
-            exchange.sendResponseHeaders(200, json.length());
+            byte[] jsonBytes = json.getBytes("UTF-8");
+            
+            exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
+            exchange.sendResponseHeaders(200, jsonBytes.length);
 
             OutputStream os = exchange.getResponseBody();
-            os.write(json.getBytes());
+            os.write(jsonBytes);
             os.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    private String escape(String s) {
+        if (s == null) return "";
+        return s.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r")
+                .replace("\t", "\\t");
     }
 }
