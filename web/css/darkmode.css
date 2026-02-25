@@ -1,180 +1,478 @@
-/* Universal Dark Mode Styles */
+/* ============================================
+   NEUROLEARN - Dark Mode Styles
+   Premium Black SaaS UI - Charcoal/Graphite Palette
+   ============================================ */
+
+/* Base Dark Mode - Background */
 body.dark-mode {
-  background: #1a1a2e !important;
+  background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%) !important;
+  color: #ffffff;
 }
 
+/* Subtle radial light in center */
+body.dark-mode::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(40, 40, 40, 0.3) 0%,
+    rgba(30, 30, 30, 0.2) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container styles */
 body.dark-mode .container,
 body.dark-mode .lesson-container,
 body.dark-mode .quiz-wrapper {
   background: transparent !important;
+  position: relative;
+  z-index: 1;
 }
 
 /* Header text */
 body.dark-mode .header h1,
 body.dark-mode h1,
 body.dark-mode .page-title {
-  color: #eee !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .header p,
 body.dark-mode p {
-  color: #aaa !important;
+  color: #9ca3af !important;
 }
 
-/* Cards */
+/* Cards - Glassmorphism style */
 body.dark-mode .subject-card,
 body.dark-mode .lesson-card,
 body.dark-mode .quiz-card {
-  background: #2d3748 !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
 }
 
 body.dark-mode .subject-card h3,
 body.dark-mode .lesson-card h3 {
-  color: #eee !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .lesson-card p {
-  color: #ccc !important;
+  color: #9ca3af !important;
 }
 
 /* Icons */
 body.dark-mode .icon-wrapper {
-  background: #4a5568 !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Form elements */
 body.dark-mode .back-btn,
 body.dark-mode a.back-btn {
-  background: #4a5568 !important;
-  color: #eee !important;
+  background: rgba(42, 42, 42, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+body.dark-mode .back-btn:hover,
+body.dark-mode a.back-btn:hover {
+  background: rgba(58, 58, 58, 0.9) !important;
+}
+
+/* Video Section */
 body.dark-mode .video-section {
-  background: #2d3748 !important;
-  border-color: #4a5568 !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 body.dark-mode #lessonTitle {
-  color: #eee !important;
+  color: #ffffff !important;
 }
 
+/* Notes Section */
 body.dark-mode .notes-section {
-  background: #2d3748 !important;
-  border-color: #4a5568 !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 body.dark-mode .notes-section h2 {
-  color: #90CDF4 !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode #notesContent {
-  color: #ccc !important;
+  color: #9ca3af !important;
 }
 
+/* Quiz Prompt */
 body.dark-mode .quiz-prompt {
-  background: #2d3748 !important;
-  color: #eee !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Done Watching Button */
 body.dark-mode .done-watching-btn {
-  background: linear-gradient(135deg, #10b981, #059669) !important;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* QUIZ PAGE - Fix dark mode */
+body.dark-mode .done-watching-btn:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+/* QUIZ PAGE - Dark mode */
 body.dark-mode .quiz-card {
-  background: #2d3748 !important;
-  color: #eee !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .question-box h2 {
-  color: #fff !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .question-number {
-  color: #aaa !important;
+  color: #9ca3af !important;
 }
 
+/* Quiz Options */
 body.dark-mode .option {
-  background: #374151 !important;
-  border: 2px solid #4b5563 !important;
-  color: #eee !important;
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .option:hover {
-  background: #4b5563 !important;
+  background: #1a1a1a !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 body.dark-mode .option.correct {
-  background: #22c55e !important;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
   border-color: #16a34a !important;
   color: white !important;
 }
 
 body.dark-mode .option.wrong {
-  background: #ef4444 !important;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
   border-color: #dc2626 !important;
   color: white !important;
 }
 
 /* Retry Button - Dark Mode */
 body.dark-mode .retry-btn {
-  background: #f97316 !important;
-  color: white !important;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 body.dark-mode .retry-btn:hover {
-  background: #ea580c !important;
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
 }
 
 body.dark-mode #nextBtn {
-  background: #3b82f6 !important;
-  color: white !important;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+body.dark-mode #nextBtn.enabled:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+/* Quiz End Screen */
 body.dark-mode #quizEndScreen {
-  background: #2d3748 !important;
-  color: #eee !important;
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode #quizEndScreen h2 {
+  background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 body.dark-mode #goDashboardBtn,
 body.dark-mode #retryQuizBtn {
-  background: #4b5563 !important;
-  color: #eee !important;
+  background: rgba(42, 42, 42, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode #goDashboardBtn:hover,
+body.dark-mode #retryQuizBtn:hover {
+  background: rgba(58, 58, 58, 0.9) !important;
 }
 
 /* Voice Button - Dark Mode */
 body.dark-mode .voice-btn {
-  background: #8b5cf6 !important;
-  color: white !important;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .voice-btn:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
 }
 
 body.dark-mode .voice-btn.muted {
-  background: #4b5563 !important;
+  background: rgba(42, 42, 42, 0.8) !important;
 }
 
-/* Dark Mode Button */
-.dark-mode-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #333;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  z-index: 10000;
-  transition: all 0.3s;
-}
-
-.dark-mode-btn:hover {
-  background: #555;
-}
-
+/* Dark Mode Toggle Button */
 body.dark-mode .dark-mode-btn {
-  background: #eee;
-  color: #333;
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  top: 20px !important;
+  right: 20px !important;
+}
+
+body.dark-mode .dark-mode-btn:hover {
+  background: #3a3a3a !important;
+}
+
+/* Profile Button - Dark Mode */
+body.dark-mode .profile-btn {
+  background: rgba(42, 42, 42, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  top: 20px !important;
+  left: 20px !important;
+  z-index: 10001 !important;
+}
+
+body.dark-mode .profile-btn:hover {
+  background: rgba(58, 58, 58, 0.9) !important;
+}
+
+/* Profile Page - Dark Mode */
+body.dark-mode .profile-card {
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .user-info h1 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .user-info p {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .stat-box {
+  background: rgba(20, 20, 20, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .stat-label {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .stat-value {
+  color: #ffffff !important;
+}
+
+body.dark-mode .progress-bar {
+  background: #262626 !important;
+}
+
+body.dark-mode .progress-fill {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+/* Profile Modal */
+body.dark-mode .modal-content {
+  background: rgba(20, 20, 20, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-mode .modal-content h2 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .modal-content input {
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .modal-content input:focus {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-mode .modal-content input::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Profile Buttons */
+body.dark-mode .edit-btn {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .edit-btn:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+body.dark-mode .logout-btn {
+  background: rgba(20, 20, 20, 0.5) !important;
+  color: #9ca3af !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .logout-btn:hover {
+  background: rgba(30, 30, 30, 0.8) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .save-btn {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .cancel-btn {
+  background: rgba(20, 20, 20, 0.5) !important;
+  color: #9ca3af !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Message Styles - Dark Mode */
+body.dark-mode .message.success {
+  background: rgba(34, 197, 94, 0.1) !important;
+  color: #4ade80 !important;
+  border-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+body.dark-mode .message.error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #f87171 !important;
+  border-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Input fields globally - Dark Mode */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode textarea {
+  background: #141414 !important;
+  border: 1px solid #262626 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Subject Cards Colors - Dark Mode (muted) */
+body.dark-mode .maths { background: rgba(34, 197, 94, 0.15) !important; }
+body.dark-mode .science { background: rgba(59, 130, 246, 0.15) !important; }
+body.dark-mode .english { background: rgba(156, 163, 175, 0.15) !important; }
+body.dark-mode .art { background: rgba(251, 191, 36, 0.15) !important; }
+body.dark-mode .reading { background: rgba(236, 72, 153, 0.15) !important; }
+body.dark-mode .geography { background: rgba(34, 197, 94, 0.15) !important; }
+
+/* Subject Lesson Page - Dark Mode */
+body.dark-mode .subject-header {
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .subject-header h1 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .subject-header p {
+  color: #9ca3af !important;
+}
+
+/* Links */
+body.dark-mode a {
+  color: #ffffff !important;
+}
+
+body.dark-mode a:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Scrollbar - Dark Mode */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Subject Lessons Page - Dark Mode */
+body.dark-mode .page-title {
+  color: #ffffff !important;
+}
+
+body.dark-mode .lesson-card {
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .lesson-card h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .lesson-card p {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .lesson-btn {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .lesson-btn:hover {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
 }

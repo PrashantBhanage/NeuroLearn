@@ -1,4 +1,5 @@
 import com.sun.net.httpserver.HttpServer;
+import controller.AuthController;
 import controller.DashboardController;
 import controller.LessonController;
 import controller.QuizController;
@@ -18,6 +19,11 @@ public class MainServer {
         server.createContext("/api/lessons", new LessonController());
         server.createContext("/api/lesson", new SingleLessonController());
         server.createContext("/api/quiz", new QuizController());
+        // Auth routes
+        server.createContext("/api/login", new AuthController());
+        server.createContext("/api/register", new AuthController());
+        server.createContext("/api/update-profile", new AuthController());
+        server.createContext("/api/update-progress", new AuthController());
 
 
 

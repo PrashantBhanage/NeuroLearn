@@ -19,8 +19,9 @@ public class StaticFileHandler implements HttpHandler {
             String path = exchange.getRequestURI().getPath();
 
             if (path.equals("/")) {
-                path = "/index.html";
+                path = "/login/login.html";
             }
+
 
             File file = new File(root + path);
 

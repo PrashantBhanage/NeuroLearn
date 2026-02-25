@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lessons</title>
 
-  <link rel="stylesheet" href="../css/subjectLessons.css" />
-  <link rel="stylesheet" href="../css/darkmode.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/subjectLessons.css" />
+  <link rel="stylesheet" href="/css/darkmode.css" />
+
 </head>
 <body>
-  <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark</button>
+  <!-- Dark Mode Button - Same as main page -->
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">🌙 Dark</button>
   
   <div class="container">
     <h1 class="page-title">📚 Lessons 📚</h1>
@@ -19,7 +22,7 @@
     </div>
   </div>
 
-  <script src="../js/subjectLessons.js"></script>
-  <script src="../js/darkmode.js"></script>
+  <script src="/js/subjectLessons.js"></script>
+  <script src="/js/darkmode.js"></script>
 </body>
 </html>

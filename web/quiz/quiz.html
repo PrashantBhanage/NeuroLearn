@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Quiz</title>
-  <link rel="stylesheet" href="../css/quiz.css" />
-  <link rel="stylesheet" href="../css/darkmode.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/quiz.css" />
+  <link rel="stylesheet" href="/css/darkmode.css" />
 </head>
 <body>
-  <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark</button>
+  <!-- Dark Mode Button - Same as main page -->
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">🌙 Dark</button>
 
 <div class="quiz-wrapper">
 
@@ -47,7 +49,7 @@
 
 </div>
 
-<script src="../js/quiz.js"></script>
-<script src="../js/darkmode.js"></script>
+<script src="/js/quiz.js"></script>
+<script src="/js/darkmode.js"></script>
 </body>
 </html>

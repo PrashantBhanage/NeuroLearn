@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learning Dashboard</title>
 
+  <link rel="stylesheet" href="/css/common.css" />
   <link rel="stylesheet" href="/css/dashboard.css" />
   <link rel="stylesheet" href="/css/darkmode.css" />
+
 </head>
 
 <body>
-  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark</button>
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">🌙 Dark</button>
+  <button class="profile-btn" id="profileBtn" onclick="window.location.href='/profile/profile.html'" style="position: fixed; top: 20px; left: 20px; z-index: 10000;">👤 Profile</button>
   
   <div class="container">
     <div class="header">
@@ -25,5 +28,30 @@
 
   <script src="/js/dashboard.js"></script>
   <script src="/js/darkmode.js"></script>
+  <script>
+    // Check if user is logged in, redirect to login if not
+    document.addEventListener('DOMContentLoaded', function() {
+      const userData = localStorage.getItem('neurolearn_user');
+      if (!userData) {
+        window.location.href = '/login/login.html';
+        return;
+      }
+      
+      try {
+        const user = JSON.parse(userData);
+        // Backend returns user_id, not id
+        if (!user || !user.user_id) {
+          localStorage.removeItem('neurolearn_user');
+          window.location.href = '/login/login.html';
+          return;
+        }
+        // Update welcome message with username
+        document.querySelector('.header h1').textContent = 'Welcome back, ' + user.username + '! 🌟';
+      } catch (e) {
+        localStorage.removeItem('neurolearn_user');
+        window.location.href = '/login/login.html';
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - NeuroLearn</title>
+
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/darkmode.css" />
+  <link rel="stylesheet" href="/profile/profile.css" />
+</head>
+
+<body>
+  <!-- Dark Mode Button - Same as main page -->
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">🌙 Dark</button>
+
+  <div class="profile-container">
+    <!-- Back to Dashboard -->
+    <a href="/index.html" class="back-btn">← Back to Dashboard</a>
+
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="avatar-section">
+          <div class="avatar-wrapper">
+            <img id="profileImage" src="/images/default-avatar.png" alt="Profile Picture" />
+          </div>
+          <button class="change-avatar-btn" id="changeAvatarBtn">📷 Change</button>
+          <input type="file" id="avatarInput" accept="image/*" style="display: none;" />
+        </div>
+
+        <div class="user-info">
+          <h1 id="username">Username</h1>
+          <p id="email">email@example.com</p>
+        </div>
+      </div>
+
+      <div class="profile-stats">
+        <div class="stat-box">
+          <div class="stat-icon">📊</div>
+          <div class="stat-content">
+            <span class="stat-label">Progress</span>
+            <span class="stat-value" id="progress">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <button class="edit-btn" id="editUsernameBtn">✏️ Edit Username</button>
+        <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+      </div>
+    </div>
+
+    <!-- Edit Username Modal -->
+    <div class="modal" id="editModal" style="display: none;">
+      <div class="modal-content">
+        <h2>Edit Username</h2>
+        <input type="text" id="newUsername" placeholder="Enter new username" />
+        <div class="modal-buttons">
+          <button class="save-btn" id="saveUsernameBtn">Save</button>
+          <button class="cancel-btn" id="cancelEditBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success/Error Message -->
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="/js/darkmode.js"></script>
+  <script src="/profile/profile.js"></script>
+</body>
+</html>

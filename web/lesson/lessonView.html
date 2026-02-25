@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson</title>
 
+  <link rel="stylesheet" href="/css/common.css" />
   <link rel="stylesheet" href="/css/lessonView.css" />
   <link rel="stylesheet" href="/css/darkmode.css" />
+
   <style>
     .done-watching-btn {
       display: block;
@@ -30,7 +32,8 @@
   </style>
 </head>
 <body>
-  <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark</button>
+  <!-- Dark Mode Button - Same as main page -->
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 10000;">🌙 Dark</button>
 
   <div class="lesson-container">
     <div class="lesson-header">

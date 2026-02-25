@@ -14,7 +14,31 @@
     justify-content: center;
   }
   
-  .mic-btn.active {
-    background-color: #ff3b3b;
-  }
-  
+.mic-btn.active {
+  background-color: #ff3b3b;
+}
+
+/* ============================================
+   Dark Mode Button - Base Styles
+   Applied globally across all pages
+   ============================================ */
+
+.dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e2e8f0;
+  color: #2d3748;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 10000;
+  transition: all 0.3s;
+}
+
+.dark-mode-btn:hover {
+  background: #cbd5e0;
+}
