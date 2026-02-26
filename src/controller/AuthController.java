@@ -3,10 +3,14 @@ package controller;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import dao.UserDAO;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import model.User;
 
 public class AuthController implements HttpHandler {
@@ -168,6 +172,7 @@ public class AuthController implements HttpHandler {
         String userIdStr = params.get("user_id");
         String username = params.get("username");
         String profilePicture = params.get("profile_picture");
+        String imageData = params.get("image_data");
 
         if (userIdStr == null) {
             sendResponse(exchange, 400, "{\"error\":\"Missing user_id\"}");
@@ -176,8 +181,16 @@ public class AuthController implements HttpHandler {
 
         int userId = Integer.parseInt(userIdStr);
         boolean success = false;
+        String savedFileName = null;
 
-        if (profilePicture != null && !profilePicture.isEmpty()) {
+        // Handle profile picture upload with image data
+        if (profilePicture != null && !profilePicture.isEmpty() && imageData != null && !imageData.isEmpty()) {
+            savedFileName = saveBase64Image(imageData, profilePicture);
+            if (savedFileName != null) {
+                success = UserDAO.updateProfilePicture(userId, savedFileName);
+            }
+        } else if (profilePicture != null && !profilePicture.isEmpty()) {
+            // Fallback: just update filename if no image data provided
             success = UserDAO.updateProfilePicture(userId, profilePicture);
         }
 
@@ -223,6 +236,45 @@ public class AuthController implements HttpHandler {
             sendResponse(exchange, 200, "{\"success\":true}");
         } else {
             sendResponse(exchange, 500, "{\"success\":false,\"error\":\"Update failed\"}");
+        }
+    }
+
+    // Save Base64 image to disk and return the saved filename
+    private String saveBase64Image(String base64Data, String originalFileName) {
+        try {
+            // Extract the actual Base64 data (remove data:image/xxx;base64, prefix if present)
+            String base64Image = base64Data;
+            if (base64Data.contains(",")) {
+                base64Image = base64Data.split(",")[1];
+            }
+            
+            // Decode Base64 to bytes
+            byte[] imageBytes = Base64.getDecoder().decode(base64Image);
+            
+            // Generate unique filename to avoid conflicts
+            String extension = "";
+            int dotIndex = originalFileName.lastIndexOf(".");
+            if (dotIndex > 0) {
+                extension = originalFileName.substring(dotIndex);
+            }
+            String uniqueFileName = "profile_" + UUID.randomUUID().toString() + extension;
+            
+            // Ensure images directory exists
+            File imagesDir = new File("web/images");
+            if (!imagesDir.exists()) {
+                imagesDir.mkdirs();
+            }
+            
+            // Save file
+            File outputFile = new File(imagesDir, uniqueFileName);
+            try (FileOutputStream fos = new FileOutputStream(outputFile)) {
+                fos.write(imageBytes);
+            }
+            
+            return uniqueFileName;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

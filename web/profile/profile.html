@@ -36,9 +36,8 @@
 
       <div class="profile-stats">
         <div class="stat-box">
-          <div class="stat-icon">📊</div>
-          <div class="stat-content">
-            <span class="stat-label">Progress</span>
+          <div class="stat-header">
+            <span class="stat-label">Overall Learning Progress</span>
             <span class="stat-value" id="progress">0%</span>
           </div>
           <div class="progress-bar">
@@ -47,7 +46,31 @@
         </div>
       </div>
 
+      <div class="learning-stats-row">
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon">📚</div>
+          <div class="mini-stat-value" id="lessonsCompleted">0</div>
+          <div class="mini-stat-label">Lessons</div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon">🔥</div>
+          <div class="mini-stat-value" id="streakDays">0</div>
+          <div class="mini-stat-label">Day Streak</div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon">⏱️</div>
+          <div class="mini-stat-value" id="timeSpent">0h</div>
+          <div class="mini-stat-label">Time Spent</div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon">⭐</div>
+          <div class="mini-stat-value" id="currentLevel">Beginner</div>
+          <div class="mini-stat-label">Level</div>
+        </div>
+      </div>
+
       <div class="profile-actions">
+
         <button class="edit-btn" id="editUsernameBtn">✏️ Edit Username</button>
         <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
       </div>

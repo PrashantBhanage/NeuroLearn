@@ -1,5 +1,66 @@
 (function initQuiz() {
 
+  // Time tracking for quiz
+  let quizStartTime = Date.now();
+  let quizTimeSpent = 0;
+  
+  // Function to track time spent on quiz
+  function trackQuizTime() {
+    const now = Date.now();
+    const elapsed = Math.floor((now - quizStartTime) / 1000);
+    quizTimeSpent = elapsed;
+    
+    const userData = localStorage.getItem('neurolearn_user');
+    if (userData) {
+      const currentUser = JSON.parse(userData);
+      if (!currentUser.totalTimeSpent) {
+        currentUser.totalTimeSpent = 0;
+      }
+      // Add 1 second to total time
+      currentUser.totalTimeSpent += 1;
+      localStorage.setItem('neurolearn_user', JSON.stringify(currentUser));
+    }
+  }
+  
+  // Start time tracking - update every 1 second for accuracy
+  setInterval(trackQuizTime, 1000);
+  
+  // Save remaining time when leaving
+  window.addEventListener('beforeunload', function() {
+    const userData = localStorage.getItem('neurolearn_user');
+    if (userData) {
+      const currentUser = JSON.parse(userData);
+      if (!currentUser.totalTimeSpent) {
+        currentUser.totalTimeSpent = 0;
+      }
+      const now = Date.now();
+      const remaining = Math.floor((now - quizStartTime) / 1000) - quizTimeSpent;
+      if (remaining > 0) {
+        currentUser.totalTimeSpent += remaining;
+        localStorage.setItem('neurolearn_user', JSON.stringify(currentUser));
+      }
+    }
+  });
+
+  // Function to update progress
+  function updateProgress(newProgress) {
+    const userData = localStorage.getItem('neurolearn_user');
+    if (!userData) return;
+    
+    const currentUser = JSON.parse(userData);
+    currentUser.progress = newProgress;
+    localStorage.setItem('neurolearn_user', JSON.stringify(currentUser));
+    
+    // Sync with server
+    fetch('/api/update-progress', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `user_id=${currentUser.user_id}&progress=${newProgress}`
+    });
+  }
+
   const params = new URLSearchParams(window.location.search);
   const lessonId = params.get("lessonId") || params.get("lessonid");
   
@@ -160,6 +221,15 @@
     nextBtn.style.display = "none";
   
     quizEndScreen.style.display = "block";
+    
+    // Update progress - increase by 10% for completing quiz (max 100%)
+    const userData = localStorage.getItem('neurolearn_user');
+    if (userData) {
+      const currentUser = JSON.parse(userData);
+      const currentProgress = currentUser.progress || 0;
+      const newProgress = Math.min(currentProgress + 10, 100);
+      updateProgress(newProgress);
+    }
     
     // Dashboard Button
     document.getElementById("goDashboardBtn").onclick = () => {

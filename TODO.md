@@ -1,50 +1,50 @@
-# Login Modal Redesign - Implementation Plan
+# NeuroLearn Project - TODO
 
-## Status: IN PROGRESS
+## Completed Tasks
 
-## Information Gathered:
-- Existing login page at `web/login/login.html` with basic white card design
-- Current fields: username, password (need to change to email)
-- Uses Fetch API for backend authentication
-- Font currently Segoe UI, needs to switch to Inter/Poppins
-- Existing CSS: `web/login/login.css`
-- JS: `web/login/login.js` handles form submissions
+### Profile Picture Fix
+- [x] Update `web/profile/profile.js` - Convert image to Base64 and send to server
+- [x] Update `src/controller/AuthController.java` - Handle Base64 image upload and save to disk
+- [x] Update `src/MainServer.java` - Add missing `/api/profile` endpoint
 
-## Plan:
+### Connection Error Fix (Lessons Page)
+- [x] Fix `src/controller/LessonController.java` - Change parameter from `subjectId` to `subject_id`
+- [x] Fix `src/controller/LessonController.java` - Wrap response in JSON object with `success`, `lessons`, `subject_name`
+- [x] Fix `src/controller/LessonController.java` - Use `title` instead of `lesson_title` in JSON
+- [x] Add `getSubjectNameById()` method to `src/dao/SubjectDAO.java`
 
-### Step 1: Update login.html
-- Add Google Fonts (Inter/Poppins)
-- Create modal structure with glass effect
-- Add close (X) button at top-right
-- Add toggle pills for "Sign up" / "Sign in" (Sign in active)
-- Change username field to Email with icon
-- Add password field with eye toggle icon
-- Update heading to "Welcome back"
-- Update subtext to "Sign in to continue"
-- Add "Forgot password?" link
-- Add footer text "Don't have an account? Sign up"
+### Lesson View Page Redesign
+- [x] Update `web/css/lessonView.css` - Modern dashboard-style design
+- [x] Update `web/lesson/lessonView.html` - Remove inline styles
+- [x] Update `web/css/darkmode.css` - Dark mode support for lesson view
 
-### Step 2: Update login.css
-- Background: dark gradient (black → deep purple)
-- Modal: glass-morphism with backdrop blur
-- Modal dimensions: 420px width, 24px border-radius
-- Soft neon purple accent throughout
-- Input fields: semi-transparent dark, inner glow
-- Button: bright purple gradient with glow effect
-- Hover effects on button
-- Mobile responsive styles
+### 100% Progress Celebration Feature
+- [x] Update `web/profile/profile.js` - Add celebration modal with confetti
+- [x] Update `web/profile/profile.css` - Celebration modal styles
+- [x] Update `web/css/darkmode.css` - Dark mode for celebration modal
 
-### Step 3: Update login.js
-- Adapt to new field IDs (email instead of username)
-- Maintain existing authentication logic
-- Add toggle functionality between Sign in/Sign up
+## Recent Changes Summary
 
-## Files to Edit:
-1. `web/login/login.html`
-2. `web/login/login.css`
-3. `web/login/login.js`
+### Profile Picture
+The profile picture wasn't changing because only the filename was being sent to the server, not the actual image file. Fixed by converting image to Base64 and sending both filename and data.
 
-## Followup Steps:
-- Test the login functionality
-- Verify mobile responsiveness
+### Connection Error Fix
+Fixed mismatches between frontend expectations and backend response:
+- Parameter name: `subject_id` (frontend) vs `subjectId` (backend)
+- Response format: Frontend expected `{success, lessons, subject_name}` but backend returned plain array
+- Property names: Frontend used `title`, backend used `lesson_title`
 
+### Lesson View Redesign
+Complete visual overhaul to match dashboard aesthetic:
+- Soft gradient background with radial highlight
+- Clean video container with hover effects
+- Pastel yellow notes panel with custom bullet styling
+- Modern pill-shaped action buttons
+- Full dark mode support
+
+### 100% Celebration
+Added celebration modal when user reaches 100% progress:
+- Shows only once per session
+- Confetti animation with 50 colorful pieces
+- "Thank you for learning with us" quote
+- Single "Start Over" button to reset progress

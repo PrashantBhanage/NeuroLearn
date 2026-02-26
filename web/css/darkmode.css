@@ -444,9 +444,79 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
   background: #4a4a4a;
 }
 
+/* Lesson View Page - Dark Mode */
+body.dark-mode .video-section {
+  background: rgba(30, 30, 30, 0.9) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .notes-section {
+  background: linear-gradient(135deg, rgba(40, 35, 25, 0.9) 0%, rgba(35, 30, 20, 0.9) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .notes-section h2 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode #notesContent {
+  color: #a0aec0 !important;
+}
+
+body.dark-mode #notesContent li {
+  color: #cbd5e0 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode #notesContent li::before {
+  color: #f6ad55 !important;
+}
+
+body.dark-mode .done-watching-btn {
+  background: linear-gradient(135deg, #2f855a 0%, #276749 100%) !important;
+  box-shadow: 0 6px 20px rgba(47, 133, 90, 0.3) !important;
+}
+
+body.dark-mode .done-watching-btn:hover {
+  box-shadow: 0 10px 30px rgba(47, 133, 90, 0.4) !important;
+}
+
+body.dark-mode .back-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .back-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #e2e8f0 !important;
+}
+
 /* Subject Lessons Page - Dark Mode */
 body.dark-mode .page-title {
   color: #ffffff !important;
+}
+
+/* Lesson Tiles - Dark Mode */
+body.dark-mode .lesson-tile {
+  background: rgba(30, 30, 30, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .lesson-tile:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
+  outline: 4px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .lesson-tile h3 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .lesson-icon-wrapper {
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 body.dark-mode .lesson-card {
@@ -475,4 +545,139 @@ body.dark-mode .lesson-btn {
 body.dark-mode .lesson-btn:hover {
   background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Profile Page - Enhanced Dark Mode */
+body.dark-mode .profile-card {
+  background: rgba(20, 20, 20, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 20px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .avatar-wrapper {
+  box-shadow: 
+    0 0 0 4px rgba(99, 102, 241, 0.2),
+    0 10px 25px rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-mode .avatar-wrapper::before {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+}
+
+body.dark-mode .change-avatar-btn {
+  background: rgba(30, 30, 30, 0.8) !important;
+  color: #a0aec0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .change-avatar-btn:hover {
+  background: rgba(40, 40, 40, 0.9) !important;
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .stat-box {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-mode .stat-label {
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .stat-value {
+  color: #818cf8 !important;
+}
+
+body.dark-mode .progress-bar {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .progress-fill {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%) !important;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4) !important;
+}
+
+body.dark-mode .mini-stat-card {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-mode .mini-stat-card:hover {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(35, 35, 35, 0.7) !important;
+}
+
+body.dark-mode .mini-stat-value {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .mini-stat-label {
+  color: #718096 !important;
+}
+
+body.dark-mode .edit-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3) !important;
+}
+
+body.dark-mode .edit-btn:hover {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4) !important;
+}
+
+body.dark-mode .logout-btn {
+  background: transparent !important;
+  color: #a0aec0 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Celebration Modal - Dark Mode */
+body.dark-mode .celebration-modal {
+  background: rgba(0, 0, 0, 0.85) !important;
+}
+
+body.dark-mode .celebration-content {
+  background: linear-gradient(135deg, rgba(40, 35, 25, 0.95) 0%, rgba(35, 30, 20, 0.95) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode .celebration-content h2 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .celebration-content p {
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .celebration-message {
+  color: #9f7aea !important;
+}
+
+body.dark-mode .celebration-quote {
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .celebrate-btn.primary {
+  background: linear-gradient(135deg, #553c9a 0%, #6b46c1 100%) !important;
+  box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4) !important;
+}
+
+body.dark-mode .celebrate-btn.secondary {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #a0aec0 !important;
+  border: 2px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .celebrate-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #e2e8f0 !important;
 }

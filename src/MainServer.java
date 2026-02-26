@@ -22,8 +22,10 @@ public class MainServer {
         // Auth routes
         server.createContext("/api/login", new AuthController());
         server.createContext("/api/register", new AuthController());
+        server.createContext("/api/profile", new AuthController());
         server.createContext("/api/update-profile", new AuthController());
         server.createContext("/api/update-progress", new AuthController());
+
 
 
 
