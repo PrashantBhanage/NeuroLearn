@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - NeuroLearn</title>
+
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/darkmode.css" />
+  <link rel="stylesheet" href="/about/about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navigation Buttons -->
+  <button class="profile-btn" id="profileBtn" onclick="window.location.href='/profile/profile.html'">👤 Profile</button>
+  <button class="about-btn" id="aboutBtn" onclick="window.location.href='/about/about.html'">ℹ️ About</button>
+  <button class="dark-mode-btn" id="darkModeBtn" onclick="toggleDarkMode()">🌙 Dark</button>
+
+  <div class="about-container">
+    <!-- Back to Dashboard -->
+    <a href="/index.html" class="back-btn">← Back to Dashboard</a>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="name">PRASHANT BHANAGE</h1>
+        <p class="tagline">Backend Developer | Java Enthusiast | Problem Solver</p>
+        
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Solapur, Maharashtra</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+91 7058560366</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>prashantbhanage717@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/imprashantbhanage" target="_blank">LinkedIn</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/PrashantBhanage" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="content-grid">
+      <!-- Education Section -->
+      <div class="section-card education-section">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Bachelor of Computer Applications (BCA)</h3>
+              <p class="institution">Solapur University</p>
+              <p class="location">Solapur, India</p>
+              <p class="duration">2023 – May 2026 (Expected)</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Higher Secondary Certificate (HSC)</h3>
+              <p class="institution">Pune Board</p>
+              <p class="location">Pune, India</p>
+              <p class="duration">2021 | 62.17%</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Secondary School Certificate (SSC)</h3>
+              <p class="institution">Pune Board</p>
+              <p class="location">Pune, India</p>
+              <p class="duration">2019 | 75.60%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="section-card skills-section">
+        <h2 class="section-title"><i class="fas fa-code"></i> Skills</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Java HttpServer</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">HTTP Fundamentals</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Database</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">DBMS</span>
+              <span class="skill-tag">Database Design</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Frontend Basics</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Core Concepts</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Backend Logic</span>
+              <span class="skill-tag">Client-Server Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="section-card experience-section">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Practical Experience</h2>
+        
+        <div class="experience-list">
+          <div class="experience-item">
+            <div class="exp-icon"><i class="fas fa-server"></i></div>
+            <div class="exp-content">
+              <p>Designed and implemented backend systems using <strong>Java HttpServer</strong> for academic applications, reducing processing time by <strong>20%</strong></p>
+            </div>
+          </div>
+          
+          <div class="experience-item">
+            <div class="exp-icon"><i class="fas fa-plug"></i></div>
+            <div class="exp-content">
+              <p>Built <strong>REST-style APIs</strong> to handle HTTP requests and manage server-side logic, resulting in <strong>15% increase</strong> in productivity</p>
+            </div>
+          </div>
+          
+          <div class="experience-item">
+            <div class="exp-icon"><i class="fas fa-database"></i></div>
+            <div class="exp-content">
+              <p>Integrated <strong>MySQL databases</strong> for structured data storage and optimized query execution</p>
+            </div>
+          </div>
+          
+          <div class="experience-item">
+            <div class="exp-icon"><i class="fas fa-users"></i></div>
+            <div class="exp-content">
+              <p>Collaborated in planning phases to improve application architecture and usability</p>
+            </div>
+          </div>
+          
+          <div class="experience-item">
+            <div class="exp-icon"><i class="fab fa-git-alt"></i></div>
+            <div class="exp-content">
+              <p>Used <strong>Git</strong> for version control and maintained repositories on <strong>GitHub</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="section-card projects-section">
+        <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+        
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Weather Application</h3>
+              <span class="project-date">Jan 2024 - Feb 2024</span>
+            </div>
+            <ul class="project-details">
+              <li>Built real-time weather system using <strong>Java HttpServer</strong> and <strong>LiveWeatherAPI</strong>, achieving <strong>99% uptime</strong></li>
+              <li>Integrated <strong>MySQL database</strong> for structured data storage and retrieval, improving data access speed by <strong>30%</strong></li>
+              <li>Implemented robust error handling and response parsing for external API calls</li>
+            </ul>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>NeuroLearn</h3>
+              <span class="project-date">Nov 2023 - Dec 2023</span>
+            </div>
+            <ul class="project-details">
+              <li>Developed <strong>Java backend</strong> platform with interactive frontend capabilities and <strong>Voice-to-Text</strong> functionality</li>
+              <li>Managed structured data using <strong>MySQL</strong> for efficient content delivery</li>
+              <li>Enhanced user engagement by <strong>25%</strong> through intuitive interface design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificates Section -->
+      <div class="section-card certificates-section">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certificates</h2>
+        
+        <div class="certificates-list">
+          <div class="certificate-item">
+            <div class="cert-icon"><i class="fas fa-award"></i></div>
+            <div class="cert-content">
+              <h3>Deloitte Technology Job Simulation</h3>
+              <p class="cert-subtitle">Coding & Development</p>
+              <p class="cert-date">March 2025</p>
+              <p class="cert-desc">Mastered fundamental coding practices and development lifecycle</p>
+            </div>
+          </div>
+          
+          <div class="certificate-item">
+            <div class="cert-icon"><i class="fas fa-award"></i></div>
+            <div class="cert-content">
+              <h3>Java Programming Fundamentals</h3>
+              <p class="cert-subtitle">Infosys Springboard</p>
+              <p class="cert-date">March 2025</p>
+              <p class="cert-desc">Acquired expertise in procedural programming paradigms and associated logical concepts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/darkmode.js"></script>
+</body>
+</html>

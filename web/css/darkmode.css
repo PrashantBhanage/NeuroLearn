@@ -681,3 +681,200 @@ body.dark-mode .celebrate-btn.secondary:hover {
   background: rgba(255, 255, 255, 0.15) !important;
   color: #e2e8f0 !important;
 }
+
+/* ============================================
+   About Page - Dark Mode Styles
+   ============================================ */
+
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .name {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .tagline {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .contact-item {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-item:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark-mode .contact-item a {
+  color: #ffffff !important;
+}
+
+body.dark-mode .section-card {
+  background: rgba(20, 20, 20, 0.65) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .section-title {
+  color: #ffffff !important;
+  border-bottom-color: #4a4a4a !important;
+}
+
+body.dark-mode .section-title i {
+  color: #9ca3af !important;
+}
+
+/* Timeline Dark Mode */
+body.dark-mode .timeline::before {
+  background: linear-gradient(180deg, #4a4a4a 0%, #5a5a5a 100%) !important;
+}
+
+body.dark-mode .timeline-marker {
+  background: #4a4a4a !important;
+  box-shadow: 0 0 0 3px #4a4a4a !important;
+  border-color: #1a1a1a !important;
+}
+
+body.dark-mode .timeline-content h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .institution {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .location,
+body.dark-mode .duration {
+  color: #6b7280 !important;
+}
+
+/* Skills Dark Mode */
+body.dark-mode .skill-category h3 {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .skill-tag {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .skill-tag:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Experience Dark Mode */
+body.dark-mode .experience-item {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border-left-color: #4a4a4a !important;
+}
+
+body.dark-mode .experience-item:hover {
+  background: rgba(40, 40, 40, 0.7) !important;
+}
+
+body.dark-mode .exp-icon {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+body.dark-mode .exp-content p {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .exp-content strong {
+  color: #9ca3af !important;
+}
+
+/* Projects Dark Mode */
+body.dark-mode .project-card {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .project-card:hover {
+  border-color: #4a4a4a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .project-header h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .project-date {
+  background: #4a4a4a !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .project-details li {
+  color: #9ca3af !important;
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .project-details li::before {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .project-details strong {
+  color: #9ca3af !important;
+}
+
+/* Certificates Dark Mode */
+body.dark-mode .certificate-item {
+  background: rgba(30, 30, 30, 0.6) !important;
+  border-color: transparent !important;
+}
+
+body.dark-mode .certificate-item:hover {
+  border-color: #4a4a4a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .cert-icon {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+}
+
+body.dark-mode .cert-content h3 {
+  color: #ffffff !important;
+}
+
+body.dark-mode .cert-subtitle {
+  color: #9ca3af !important;
+}
+
+body.dark-mode .cert-date {
+  color: #6b7280 !important;
+}
+
+body.dark-mode .cert-desc {
+  color: #9ca3af !important;
+}
+
+/* About Button - Dark Mode */
+body.dark-mode .about-btn {
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  top: 20px !important;
+  left: 140px !important;
+}
+
+body.dark-mode .about-btn:hover {
+  background: #3a3a3a !important;
+}
+
+/* Back Button - Dark Mode */
+body.dark-mode .back-btn {
+  background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .back-btn:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
